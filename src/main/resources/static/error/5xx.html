@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server Error | GymTracker Backend</title>
+    <style>
+        :root {
+            --bg: #09090b;
+            --card: #18181b;
+            --border: #27272a;
+            --error: #ef4444;
+            --text: #fafafa;
+            --muted: #a1a1aa;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .error-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .status-badge {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--error);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin: 0 0 0.75rem 0;
+            letter-spacing: -0.025em;
+        }
+
+        p {
+            color: var(--muted);
+            line-height: 1.6;
+            margin: 0 0 2rem 0;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border);
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: block;
+            text-align: center;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s;
+            background: var(--error);
+            color: white;
+        }
+
+        .btn:hover {
+            background: #dc2626;
+        }
+    </style>
+</head>
+    <body>
+        <div class="error-card">
+            <div class="status-badge">HTTP 5xx SERIES</div>
+            <h1>System Overload</h1>
+            <p>
+                The server hit a personal best it couldn't handle. We're currently re-racking the weights. Please try again in a moment.
+            </p>
+
+            <div class="divider"></div>
+
+            <a href="/" class="btn">Reload Dashboard</a>
+        </div>
+    </body>
+</html>

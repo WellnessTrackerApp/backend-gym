@@ -1,0 +1,2 @@
+ALTER TABLE training_plans ADD COLUMN
+is_deleted BOOLEAN DEFAULT FALSE;

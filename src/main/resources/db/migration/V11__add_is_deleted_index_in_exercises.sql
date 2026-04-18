@@ -1,0 +1,1 @@
+CREATE INDEX idx_exercises_is_deleted ON exercises(is_deleted)

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymTracker | API Status</title>
+    <style>
+        :root {
+            --bg: #09090b;
+            --card: #18181b;
+            --border: #27272a;
+            --primary: #10b981; /* Green for "Smoothly Running" */
+            --text: #fafafa;
+            --muted: #a1a1aa;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .status-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 2.5rem;
+            border-radius: 0.75rem;
+            max-width: 500px;
+            width: 90%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Pulse indicator for "Live" status */
+        .status-dot {
+            height: 10px;
+            width: 10px;
+            background-color: var(--primary);
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 10px rgba(16, 185, 129, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+        }
+
+        .status-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 0 1rem 0;
+            letter-spacing: -0.025em;
+        }
+
+        .content {
+            color: var(--muted);
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .highlight {
+            color: var(--text);
+            font-weight: 500;
+        }
+    </style>
+</head>
+    <body>
+        <div class="status-card">
+            <div class="status-header">
+                <span class="status-dot"></span>
+                System Operational
+            </div>
+
+            <h1>GymTracker Core</h1>
+
+            <div class="content">
+                The backend service is <span class="highlight">up and running smoothly</span>.
+                This is a static landing page served by <span class="highlight">Spring Boot</span>.
+                All API endpoints are currently active and listening for requests.
+            </div>
+        </div>
+    </body>
+</html>
