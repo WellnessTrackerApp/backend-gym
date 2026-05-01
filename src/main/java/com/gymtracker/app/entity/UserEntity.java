@@ -23,7 +23,7 @@ import java.util.Set;
 import java.util.UUID;
 
 @Entity
-@Table(name = "users")
+@Table(name = "gym_users")
 @EntityListeners(AuditingEntityListener.class)
 @Setter
 @Getter

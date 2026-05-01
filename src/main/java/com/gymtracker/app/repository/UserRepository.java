@@ -13,5 +13,6 @@ public interface UserRepository {
     boolean existsByUsername(String username);
     boolean existsById(UUID userId);
     User save(User user);
+    void delete(User user);
 
 }

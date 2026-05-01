@@ -3,7 +3,7 @@ CREATE TABLE training_plans (
     name VARCHAR(255) NOT NULL,
     is_custom BOOLEAN NOT NULL DEFAULT TRUE,
     owner_id UUID,
-    constraint fk_training_plans_users FOREIGN KEY (owner_id) REFERENCES users (user_id) ON DELETE CASCADE
+    constraint fk_training_plans_users FOREIGN KEY (owner_id) REFERENCES gym_users (user_id) ON DELETE CASCADE
 );
 
 CREATE TABLE plan_items (

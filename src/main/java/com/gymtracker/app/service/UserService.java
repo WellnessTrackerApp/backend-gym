@@ -6,4 +6,5 @@ import java.util.UUID;
 
 public interface UserService {
     UserProfileResponse getUserProfile(UUID userId);
+    void deleteUser(UUID userId);
 }

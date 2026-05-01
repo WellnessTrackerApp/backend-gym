@@ -5,5 +5,5 @@ CREATE TABLE EXERCISES (
     category VARCHAR(50) NOT NULL DEFAULT 'UNCATEGORIZED',
     owner_id UUID,
 
-    CONSTRAINT fk_owner FOREIGN KEY(owner_id) REFERENCES Users(user_id) ON DELETE CASCADE
+    CONSTRAINT fk_owner FOREIGN KEY(owner_id) REFERENCES gym_users(user_id) ON DELETE CASCADE
 )

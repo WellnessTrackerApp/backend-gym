@@ -6,7 +6,7 @@ CREATE TABLE workouts (
 
     constraint fk_workouts_users
         FOREIGN KEY (user_id)
-        REFERENCES users(user_id)
+        REFERENCES gym_users(user_id)
         ON DELETE CASCADE,
 
     constraint fk_workouts_training_plans
