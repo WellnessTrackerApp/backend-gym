@@ -24,4 +24,10 @@ public class UserServiceImpl implements UserService {
 
         return userMapper.userToUserProfileResponse(user);
     }
+
+    @Override
+    public void deleteUser(UUID userId){
+        User user = userRepository.findById(userId).orElseThrow(() -> new UserDoesNotExistException("deleting-profile"));
+        userRepository.delete(user);
+    }
 }

@@ -53,4 +53,9 @@ public class UserRepositoryAdapter implements UserRepository {
         UserEntity savedUserEntity = repository.save(userEntity);
         return userMapper.userEntityToUser(savedUserEntity);
     }
+
+    @Override
+    public void delete(User user) {
+        repository.deleteById(user.getUserId());
+    }
 }
