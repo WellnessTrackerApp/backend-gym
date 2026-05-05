@@ -37,14 +37,14 @@ public class AuthServiceImpl implements AuthService {
     private final JwtService jwtService;
 
     @Override
-    public void signUp(SignUp signUp) {
+    public UUID signUp(SignUp signUp) {
         if (userRepository.existsByEmail(signUp.email()) || userRepository.existsByUsername(signUp.username()))
             throw new UserAlreadyExistsException("same-email-or-username");
 
         User user = userMapper.signUpToUser(signUp);
         user.updatePassword(passwordEncoder.encode(signUp.password()));
 
-        userRepository.save(user);
+        return userRepository.save(user).getUserId();
     }
 
     @Override

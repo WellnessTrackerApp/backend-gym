@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/auth")
 @RequiredArgsConstructor
@@ -27,13 +29,11 @@ public class AuthController {
     private final MessageSource messageSource;
 
     @PostMapping("/sign-up")
-    public ResponseEntity<MessageResponse> signUp(@Valid @RequestBody SignUp signUp) {
-        authService.signUp(signUp);
+    public ResponseEntity<UUID> signUp(@Valid @RequestBody SignUp signUp) {
+        UUID id = authService.signUp(signUp);
 
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(new MessageResponse(
-                        messageSource.getMessage("message-response.user-registered-successfully", null, LocaleContextHolder.getLocale())
-                ));
+                .body(id);
     }
 
     @PostMapping("/sign-in")
